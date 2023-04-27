@@ -1,5 +1,6 @@
-from flask import Blueprint, jsonify
 from app import db
+from flask import Blueprint, jsonify
+from flask import request
 from models import User, PhoneNumber
 
 user_routes = Blueprint('user_routes', __name__)
