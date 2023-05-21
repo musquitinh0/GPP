@@ -1,7 +1,7 @@
 # GPP
 
 Como rodar o servidor backend:
-1. Instale as dependências necessárias (ainda vou adicionar um requirements.txt mas é possível fazer isso vendo quais imports são utilizados).
+1. Instale as dependências necessárias utilizando o comando: `pip install -r requirements.txt`
 2. Crie um arquivo chamado config.py no mesmo formato do config_template.py e adicione o DATABASE_URL conhecido.
 3. Execute o app.py.
 
