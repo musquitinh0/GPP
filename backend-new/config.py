@@ -1,1 +1,0 @@
-DATABASE_URL = "postgres://qemctjlh:fvfSCufnXlDu4qRr0L904XwsDcqNhCCd@babar.db.elephantsql.com/qemctjlh"
