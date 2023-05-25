@@ -31,10 +31,7 @@ def is_valid_phone_number(number):
     number = re.sub(r'\D', '', number)
 
     number_length = len(number)
-    if number_length != 9 or number_length != 11 or number_length != 13:
-        return False
-
-    if number[2:] == number[2] * (len(number) - 2):
+    if not(number_length == 9 or number_length == 11 or number_length == 13):
         return False
 
     return True
