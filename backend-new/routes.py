@@ -1,6 +1,7 @@
+from app import db
 from flask import request, jsonify, Blueprint
 from flask_jwt_extended import jwt_required, create_access_token, get_jwt_identity
-from app import db
+from email_sender import send_email
 from models import User, Phone
 from utils import is_valid_cpf, is_valid_email, is_valid_phone_number
 
@@ -139,8 +140,16 @@ def report_found_phone():
         'phone_numbers': [phone.number for phone in owner.phone_numbers]
     }
 
-    # TODO
-    # Send email to the owner (implementation not included)
-    # send_email(phone_number.number, owner_contact)
+    sender_email = 'gppdb23@gmail.com'
+    #sender_password = 'gppDB@-23'
+    sender_password = 'tmutnrdhgqhakbyh'
+    recipient_email = owner_contact['email']
+    subject = 'GPP - Seu telefone foi encontrado!'
+    message = f'Seu telefone com o número {number} foi encontrado! Procure a delegacia mais próxima.'
 
-    return jsonify({'owner_contact': owner_contact}), 200
+    try:
+        send_email(sender_email, sender_password, recipient_email, subject, message)
+        return jsonify({'owner_contact': owner_contact}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 401
+
