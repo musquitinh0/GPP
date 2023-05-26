@@ -5,13 +5,14 @@
 <form>
     <h3>Login</h3>
 
-    <label for="username">Username</label>
-    <input type="text" placeholder="Email" id="username" ng-model="username">
+    <label for="username">Email</label>
+    <input type="email" placeholder="Email" id="email" ngModel = "login.email" required/>
 
-    <label for="password">Password</label>
-    <input type="password" placeholder="Senha" id="password" ng-model="password">
+    <label for="password">Senha</label>
+    <input type="password" placeholder="Senha" id="password" ngModel ="login.password" required/>
 
-    <button>Log In</button>
+    <button (click)="onSubmit()">Log In</button>
+    <button (click)="registrar()">Registrar</button>
 
     <div class="social">
       <div class="go"><i class="fab fa-google"></i>  Google</div>

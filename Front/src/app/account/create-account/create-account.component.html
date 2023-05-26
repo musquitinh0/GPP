@@ -1,1 +1,32 @@
-<p>create-account works!</p>
+<div class = "logo">
+    <h1>GPP</h1>(Finge que tem uma logo aqui)
+</div>
+
+<form>
+    <h3>Registrar</h3>
+
+    <label for="username">Email</label>
+    <input type="email" placeholder="Email" id="email" ngModel = "user.email" required/>
+
+    <label for="password">Senha</label>
+    <input type="password" placeholder="Senha" id="password" ngModel ="user.password" required/>
+
+    <label for="passwordR">Repita a senha</label>
+    <input type="passwordR" placeholder="Repita a senha" id="passwordR" required/>
+
+    <label for="Cpf">CPF</label>
+    <input type="text" placeholder="CPF" id="Cpf" ngModel ="user.cpf" required/>
+
+    <label for="Adress">Endereço</label>
+    <input type="text" placeholder="Endereço" id="Adress" ngModel ="user.adress" required/>
+
+    <label for="Date">Data de nascimento</label>
+    <input type="date" id="Date" ngModel ="user.date_of_birth" required/>
+
+    <button (click)="onSubmit()">Registrar</button>
+
+    <div class="social">
+      <div class="go"><i class="fab fa-google"></i>  Google</div>
+      <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+    </div>
+</form>
