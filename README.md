@@ -5,4 +5,9 @@ Como rodar o servidor backend:
 2. Crie um arquivo chamado config.py no mesmo formato do config_template.py e adicione o DATABASE_URL conhecido.
 3. Execute o app.py.
 
+Rodar o Front:
+1. instale o node
+2. instale o angular
+3. rode `ng serve`na pasta "front" do projeto
+
 Como o database foi criado e exemplos de chamadas de rotas podem ser encontrados [aqui](https://docs.google.com/document/d/1k8VK0QDaTnDESO4dPHfsQyzp-J7rNFrRHlzZxgctqpM/edit?usp=sharing).
