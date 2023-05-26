@@ -1,0 +1,21 @@
+<div class = "logo">
+    <h1>GPP</h1>(Finge que tem uma logo aqui)
+</div>
+
+<form (ngSubmit)="onSubmit()" #form="ngForm">
+    <h3>Login</h3>
+
+    <label for="username">Email</label>
+    <input type="email" placeholder="Insira o seu email" name="email" id="email" [(ngModel)]="login.email" required />
+
+    <label for="password">Senha</label>
+    <input type="password" placeholder="Insira a sua senha" name="password" id="password" [(ngModel)]="login.password" required />
+
+    <button type="submit" >Log In</button>
+    <button type= "button"  [routerLink]="['/create-account']">Registrar</button>
+
+    <div class="social">
+      <div class="go"><i class="fab fa-google"></i>  Google</div>
+      <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+    </div>
+</form>
