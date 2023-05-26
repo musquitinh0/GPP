@@ -1,3 +1,4 @@
+import { AccountService } from './../shared/account.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -15,12 +16,19 @@ export class CreateAccountComponent implements OnInit {
     cpf: ''
   };
 
-  constructor() { }
+  constructor(
+    private accountService: AccountService
+  ) { }
 
   ngOnInit() {
   }
 
-  onSubmit() {
-
+  async onSubmit() {
+    try {
+      const result = await this.accountService.createAccount(this.user);
+      console.log(result);
+    } catch (error) {
+      console.error(error);
+    }
   }
 }

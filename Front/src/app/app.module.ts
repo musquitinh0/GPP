@@ -11,7 +11,7 @@ import { AuthenticationComponent } from './layout/authentication/authentication.
 import { AppRoutingModule } from './app-routing.module';
 import { PerfilComponent } from './telas/perfil/perfil.component';
 
-
+import { httpInterceptorProviders } from './http_interceptors';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { PerfilComponent } from './telas/perfil/perfil.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
