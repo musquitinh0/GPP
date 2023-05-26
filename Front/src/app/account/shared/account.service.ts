@@ -1,17 +1,22 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  login(user: any){
-    return new Promise((resolve) => {
-      window.localStorage.setItem('token', 'meu-token');
-      resolve(true);
-    });
+  async login(user: any) {
+    const result = await this.http.post<any>(`${environment.api}/login`, user).toPromise();
+    if (result && result.access_token) {
+      window.localStorage.setItem('token', result.access_token);
+      return true;
+    }
+
+    return false;
   }
 
   createAccount(account: any){

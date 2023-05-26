@@ -9,7 +9,7 @@ import { FormsModule }   from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  login = {
+  public login = {
     email: '',
     password: ''
   };
@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
 
   async onSubmit() {
     try {
+      console.log(this.login);
       const result = await this.accountService.login(this.login);
       console.log(`Login efetuado: ${result}`);
 
@@ -31,8 +32,5 @@ export class LoginComponent implements OnInit {
     } catch (error) {
       console.error(error);
     }
-  }
-  registrar(){
-    this.router.navigate(['/create-account']);
   }
 }
