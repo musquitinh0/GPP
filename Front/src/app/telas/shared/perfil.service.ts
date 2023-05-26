@@ -14,4 +14,8 @@ export class PerfilService {
     return this.http.get<Profile>(`${environment.api}/profile`);
   }
 
+  mark_lost(phone: any){
+    return this.http.post<any>(`${environment.api}/phone/lost`, {number: phone});
+  }
+
 }

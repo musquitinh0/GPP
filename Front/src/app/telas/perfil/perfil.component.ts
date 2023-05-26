@@ -28,7 +28,9 @@ export class PerfilComponent {
   }
 
   marcarPerdido(phone: any){
-
+    this.perfilService.mark_lost(phone).subscribe(Response => {
+      console.log(Response);
+    });
   }
 
 }
