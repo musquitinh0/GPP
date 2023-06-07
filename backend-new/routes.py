@@ -140,15 +140,12 @@ def report_found_phone():
         'phone_numbers': [phone.number for phone in owner.phone_numbers]
     }
 
-    sender_email = 'gppdb23@gmail.com'
-    #sender_password = 'gppDB@-23'
-    sender_password = 'tmutnrdhgqhakbyh'
     recipient_email = owner_contact['email']
     subject = 'GPP - Seu telefone foi encontrado!'
     message = f'Seu telefone com o número {number} foi encontrado! Procure a delegacia mais próxima.'
 
     try:
-        send_email(sender_email, sender_password, recipient_email, subject, message)
+        send_email(recipient_email, subject, message)
         return jsonify({'owner_contact': owner_contact}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 401
