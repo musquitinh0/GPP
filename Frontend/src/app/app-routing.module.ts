@@ -6,13 +6,16 @@ import { LoginComponent } from './account/login/login.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
 import { AuthGuard } from './account/shared/auth.guard';
 import { HomeScreenComponent } from './telas/home-screen/home-screen.component';
+import { PerfilComponent } from './telas/perfil/perfil.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    children:[],
-    canActivate: [AuthGuard]
+    children:[
+      {path: 'perfil', component: PerfilComponent}
+    ]
+    //canActivate: [AuthGuard]
   },
   {
     path: '',

@@ -10,6 +10,8 @@ import { HomeComponent } from './layout/home/home.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeScreenComponent } from './telas/home-screen/home-screen.component';
+import { PerfilComponent } from './telas/perfil/perfil.component';
+import { httpInterceptorProviders } from './http-interceptors';
 
 @NgModule({
   declarations: [
@@ -18,15 +20,16 @@ import { HomeScreenComponent } from './telas/home-screen/home-screen.component';
     CreateAccountComponent,
     HomeComponent,
     AuthenticationComponent,
-    HomeScreenComponent
+    HomeScreenComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
