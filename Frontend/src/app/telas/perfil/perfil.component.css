@@ -1,0 +1,125 @@
+.profile-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+}
+
+.profile-page > *{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+.profile-header{
+    display: flex;
+    align-items: center;
+    height: 20%;
+    width: 90%;
+    margin: 2%;
+    margin-bottom: 5%;
+}
+
+.profile-header > img{
+    width: auto;
+    height: 50%;
+    margin: 5%;
+    border-radius: 50%;
+}
+
+.profile-header > h2{
+    align-self: flex-start;
+    margin: 2%;
+}
+
+.lateral-perfil{
+    display: flex;
+    width: 60%;
+}
+.lateral-perfil > h2{
+    width: 85%;
+}
+
+.lateral-perfil > button{
+    align-self: center;
+    border: none;
+    border-radius: 5px;
+    width: 15%;
+    background-color: white;
+}
+
+.lateral-perfil > button > img{
+    width: 100%;
+    box-sizing: border-box;
+    align-self: flex-end;
+}
+
+.dispositivos{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0;
+}
+
+.dispositivos > h4{
+    color: rgb(73, 73, 73);
+    align-self: flex-start;
+    margin: 0;
+}
+
+.alerta-no-phone{
+    background-color: rgb(209, 121, 121);
+    border-radius: 5px;
+    width: 90%;
+    margin: 5%;
+    padding: 2%;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.alerta-no-phone > h5 {
+    margin: 0;
+}
+
+.dispositivos > button{
+    width: 90%;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(98, 255, 169);
+    align-self: center;
+    justify-self: flex-end;
+    padding: 8px;
+    margin-top: 5%;
+}
+
+.list-group{
+    width: 100%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: 0;
+    margin-top: 2%;
+}
+
+.list-group > li{
+    width: 100%;
+    display: flex;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(148, 148, 148);
+    margin: 2%;
+    box-sizing: border-box;
+    align-self: center;
+    padding-right: 2%;
+}
+
+.list-group > li > button{
+    height: 35%; 
+    align-self: center;
+    border: none;
+    border-radius: 5px;
+    margin: 1%;
+}
