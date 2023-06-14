@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './layout/home/home.component';
 import { CreateAccountComponent } from './account/create-account/create-account.component';
@@ -7,13 +7,15 @@ import { AuthenticationComponent } from './layout/authentication/authentication.
 import { AuthGuard } from './account/shared/auth.guard';
 import { HomeScreenComponent } from './telas/home-screen/home-screen.component';
 import { PerfilComponent } from './telas/perfil/perfil.component';
+import { EditPerfilComponent } from './telas/edit-perfil/edit-perfil.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
     children:[
-      {path: 'perfil', component: PerfilComponent}
+      {path: 'perfil', component: PerfilComponent},
+      {path: 'edit-perfil', component: EditPerfilComponent}
     ]
     //canActivate: [AuthGuard]
   },

@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeScreenComponent } from './telas/home-screen/home-screen.component';
 import { PerfilComponent } from './telas/perfil/perfil.component';
 import { httpInterceptorProviders } from './http-interceptors';
+import { EditPerfilComponent } from './telas/edit-perfil/edit-perfil.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { httpInterceptorProviders } from './http-interceptors';
     HomeComponent,
     AuthenticationComponent,
     HomeScreenComponent,
-    PerfilComponent
+    PerfilComponent,
+    EditPerfilComponent
   ],
   imports: [
     BrowserModule,
