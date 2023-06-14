@@ -3,9 +3,9 @@
         <img src="https://img.freepik.com/free-icon/user_318-159711.jpg">
         <div class="lateral-perfil">
             <h2>{{user.name}}</h2>
-            <button>
+            <a href="/edit-perfil">
                 <img src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png">
-            </button>
+            </a>
         </div>  
     </div>
     <div class="dispositivos">
@@ -22,7 +22,7 @@
                 -->
             </li>
         </ul>
-        <button>Adicionar dispositivo</button>
+        <button [routerLink]="['/adicionar-dispositivo']">Adicionar dispositivo</button>
     </div>
     <div style="display: flex; flex-direction: column; width: 90%; margin-top: 5%;">
         <h5 style="color: rgb(73, 73, 73);

@@ -1,0 +1,29 @@
+<div class="login-container">
+    <div class="login-header">
+      <div class="backbutton">
+        <a href="/perfil"><img src="https://icones.pro/wp-content/uploads/2021/06/symbole-fleche-gauche-noir.png" ></a>
+      </div>
+      <img src="https://as1.ftcdn.net/v2/jpg/02/72/17/48/1000_F_272174843_qMXMxCOzFlNST6AMjDqBQFyjWEUZfqoL.jpg" title="smarthphone">
+      <div class="backbutton"></div>
+    </div>
+          
+      <form class="texts" (ngSubmit)="onSubmit()" #form="ngForm">
+        <h1>Adicionar dispositivo</h1>
+        <div class="text-box">
+          <label for="nome">Modelo</label>
+          <input id="mone" name="nome" placeholder="Insira o modelo do aparelho"  type="text" [(ngModel)]="phone.modelo" required>
+        </div>
+        <div class="text-box">
+          <label for="adress">número</label>
+          <input id="adress" name="adress" placeholder="Insira o número do aparelho"  type="text" [(ngModel)]="phone.number" required>
+        </div>
+        <div class="text-box">
+          <label for="senha">Imei</label>
+          <input id= "senha" name = "senha" placeholder="Insira o imei do aparelho" required type="password" [(ngModel)]="phone.imei">
+          <h6 style="color: rgb(129, 129, 129);">O imei pode ser encontrado na caixa do aparelho, na nota fiscal ou nas configurações do mesmo</h6>
+        </div>
+        <button type="submit" [disabled]="form.form.invalid">Alterar dados</button>
+      </form>
+
+    </div>
+  
