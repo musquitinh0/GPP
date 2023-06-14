@@ -1,3 +1,5 @@
+import random
+from email_sender import send_email
 from flask import jsonify, request, Blueprint
 from flask_jwt_extended import create_access_token
 from app import db
@@ -5,7 +7,6 @@ from models import User
 from utils import is_valid_email, is_valid_cpf
 
 auth_routes = Blueprint('auth_routes', __name__)
-
 
 @auth_routes.route('/register', methods=['POST'])
 def register():
@@ -31,13 +32,51 @@ def register():
     if User.query.filter_by(email=email).first():
         return jsonify({'error': 'Email already registered'}), 400
 
+    # Generate confirmation code
+    confirmation_code = generate_confirmation_code()
+
     # Create new user
     user = User(cpf=cpf, full_name=full_name, date_of_birth=date_of_birth,
-                address=address, email=email, password=password)
+                address=address, email=email, password=password, confirmation_code=confirmation_code)
     db.session.add(user)
     db.session.commit()
 
-    return jsonify({'message': 'User registered successfully'}), 201
+    # Send confirmation email
+    send_confirmation_email(email, confirmation_code)
+
+    return jsonify({'message': 'Confirmation code sent to your email'}), 201
+
+@auth_routes.route('/confirm', methods=['POST'])
+def confirm_registration():
+    data = request.get_json()
+
+    # Extract email and confirmation code from request
+    email = data.get('email')
+    confirmation_code = data.get('confirmation_code')
+
+    # Find user by email and confirmation code
+    user = User.query.filter_by(email=email, confirmation_code=confirmation_code).first()
+
+    if not user:
+        return jsonify({'error': 'Invalid email or confirmation code'}), 401
+
+    # Remove confirmation code and mark user as confirmed
+    user.confirmation_code = None
+    user.confirmed = True
+    db.session.commit()
+
+    # Generate access token
+    access_token = create_access_token(identity=user.id)
+
+    return jsonify({'access_token': access_token}), 200
+
+def generate_confirmation_code():
+    return str(random.randint(1000, 9999))
+
+def send_confirmation_email(email, confirmation_code):
+    subject = 'GPP - Código de Confirmação'
+    message = f'Seu código de confirmação é: {confirmation_code}.'
+    send_email(email, subject, message)
 
 @auth_routes.route('/login', methods=['POST'])
 def login():

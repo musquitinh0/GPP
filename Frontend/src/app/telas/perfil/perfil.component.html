@@ -1,0 +1,34 @@
+<div class="profile-page">
+    <div class="profile-header">
+        <img src="https://img.freepik.com/free-icon/user_318-159711.jpg">
+        <div class="lateral-perfil">
+            <h2>{{user.name}}</h2>
+            <button>
+                <img src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png">
+            </button>
+        </div>  
+    </div>
+    <div class="dispositivos">
+        <h4>dispositivos:</h4>
+        <div *ngIf="phones.length == 0" class="alerta-no-phone">
+            <h5> Nenhum dispositivo cadastrado, cadastre um novo agora mesmo!</h5>
+        </div>
+        <ul class="list-group" *ngIf="phones.length > 0">
+            <li *ngFor="let phone in phones">
+                <h5 style="width: 90%;">{{phone.modelo}}</h5>
+                <!--
+                <button>v</button>
+                <button>x</button>
+                -->
+            </li>
+        </ul>
+        <button>Adicionar dispositivo</button>
+    </div>
+    <div style="display: flex; flex-direction: column; width: 90%; margin-top: 5%;">
+        <h5 style="color: rgb(73, 73, 73);
+        align-self: flex-start;
+        margin: 0;" > Minha conta</h5>
+        <a href="/login" style="margin-bottom: 0;"><h5 > Mudar para outra conta</h5></a>
+        <a href="/home-screen" style="margin-top: 0;"><h5>Sair</h5></a>
+    </div>
+</div>

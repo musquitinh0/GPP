@@ -1,0 +1,35 @@
+<div class="login-container">
+    <div class="login-header">
+      <div class="backbutton">
+        <a href="/home-screen"><img src="https://icones.pro/wp-content/uploads/2021/06/symbole-fleche-gauche-noir.png" ></a>
+      </div>
+      <img src="https://i.imgur.com/qcAl18r.jpeg" title="logo do gpp">
+      <div class="backbutton"></div>
+    </div>
+        
+    <form class="texts" (ngSubmit)="onSubmit()" #form="ngForm">
+      <h1>Login</h1>
+      <div class="text-box">
+        <label for="email">Email</label>
+        <input id="email" name="email" placeholder="Insira o seu email"  type="email" [(ngModel)]="login.email" required>
+      </div>
+      <div class="text-box">
+        <label for="senha">Senha</label>
+        <input id= "senha" name = "senha" placeholder="Insira a sua senha" required type="password" [(ngModel)]="login.password">
+      </div>
+      <div class="remember-me-container">
+        <div>
+          <input id="rememberMe"  type="checkbox">
+          Lembre de mim
+        </div>
+        <a>Esqueceu a senha?</a>
+      </div>
+      <button type="submit" [disabled]="form.form.invalid">Login</button>
+    </form>
+    <div class="login-foot">
+      Não possui uma conta? <a href="/create-account">Criar conta</a>
+    </div>
+    <div class="line">
+      <hr style="width:40%;text-align:center"> ou <hr style="width:40%;text-align:center">
+    </div>
+  </div>
