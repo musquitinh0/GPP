@@ -67,4 +67,7 @@ export class AccountService {
     return true;
   }
 
+  isUserPolice(){
+    return false;
+  }
 }
