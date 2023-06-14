@@ -5,6 +5,7 @@ import { CreateAccountComponent } from './account/create-account/create-account.
 import { LoginComponent } from './account/login/login.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
 import { AuthGuard } from './account/shared/auth.guard';
+import { HomeScreenComponent } from './telas/home-screen/home-screen.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
     path: '',
     component: AuthenticationComponent,
     children: [
-      { path: '', redirectTo: 'login', pathMatch: 'full' },
+      { path: '', redirectTo: 'home-screen', pathMatch: 'full' },
+      { path: 'home-screen', component: HomeScreenComponent},
       { path: 'login', component: LoginComponent },
       { path: 'create-account', component: CreateAccountComponent }
     ]

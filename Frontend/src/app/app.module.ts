@@ -9,6 +9,7 @@ import { CreateAccountComponent } from './account/create-account/create-account.
 import { HomeComponent } from './layout/home/home.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeScreenComponent } from './telas/home-screen/home-screen.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     CreateAccountComponent,
     HomeComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    HomeScreenComponent
   ],
   imports: [
     BrowserModule,
